@@ -1,2 +1,2 @@
-# aiprojekt
-Linus Kasper AI Projekt
+# AI Projekt
+Linus Kasper 
