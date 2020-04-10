@@ -17,17 +17,33 @@ reddit = praw.Reddit(client_id = "vvT6zwSKNTzn7g",
                      password = "qwerty123")
 
 #model name and location
-filepath = "checkpoint_run1.tar"
-googlefileid = "1ZC3fGu4EOMcOmmKK3ug6dJ3gBWvRMDXn"
-filepath1 = "data.txt"
-googlefileid1 = "1t43abHqeBzuKwoLh4zCybXXze_2-gbFb"
+tarFilepath = "checkpoint_run1.tar"
+tarGoogleFileid = "1ZC3fGu4EOMcOmmKK3ug6dJ3gBWvRMDXn"
+dataFilepath = "data.txt"
+dataGoogleFileid = "1t43abHqeBzuKwoLh4zCybXXze_2-gbFb"
+
+#function to scrape a subreddit to create the data.txt file
+def scrape():
+    for submission in reddit.subreddit('unpopularopinion').top(limit=1000):
+        title.append(submission.title)
+        body.append(submission.selftext)
+
+    file = open("data.txt", "w")
+
+    for i in range(len(title)):
+        try:
+            titletext = title[i].replace("\n", " ")
+            bodytext = body[i].replace("\n", " ")
+            file.write(titletext + "*" * 30  + bodytext + "\n")
+        except:
+            pass
 
 #function to extract files from tarfile
 def extract():
-    with tarfile.open(filepath, 'r') as tar:
+    with tarfile.open(tarFilepath, 'r') as tar:
         tar.extractall()
-    os.remove(filepath)
-    print("File",filepath, "Removed!")
+    os.remove(tarFilepath)
+    print("File",tarFilepath, "Removed!")
 
 #dowloading model file from google
 def download_file_from_google_drive(id, destination):
@@ -56,8 +72,8 @@ def download_file_from_google_drive(id, destination):
 
     save_response_content(response, destination)
 
-download_file_from_google_drive(googlefileid1,filepath1)
-download_file_from_google_drive(googlefileid,filepath)
+download_file_from_google_drive(dataGoogleFileid,dataFilepath)
+download_file_from_google_drive(tarGoogleFileid,tarFilepath)
 extract()
 sess = gpt2.start_tf_sess()
 gpt2.load_gpt2(sess)
