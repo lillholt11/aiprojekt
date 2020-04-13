@@ -5,7 +5,7 @@
 ## Innehållsförteckning
 
 * [Om projektet](#Om-projektet)
-* [Länkar(#Länkar)
+* [Länkar](#Länkar)
 * [Filer](#Filer)
 * [Köra programmet](#Köra-programmet)
   * [Förarbete](#förarbete)
@@ -42,7 +42,7 @@ Du behöver följande program installerade på din dator.
 ### Förarbete
 Installera följande biblotek till python
 
-* tensorflow 1.15.0 ``` pip install tensorflow==1.15.0`````
+* tensorflow 1.15.0 ``` pip install tensorflow==1.15.0```
 * requests ``` pip install requests```
 * gpt-2-simple ``` pip install gpt-2-simple```
 
@@ -50,7 +50,7 @@ Klona sedan denna github till en map på din dator.
 
 ### Test av programmet
 
-Om du vill använda mitt dataset så hoppa till * [Starta programmet](#Starta-programmet)
+Om du vill använda mitt dataset så hoppa till [Starta programmet](#Starta-programmet)
 
 ### Eget dataset
 
@@ -70,7 +70,13 @@ Kör filen **main.py**
 * ``` python main.py```
 
 ## Utvärdering
+Under projektets gång har jag stött på lite problem.
 
 ### Problem
+* Det första problemet var när jag skulle använda generera text, man fick då inte ha den nyare versionen av tensorflow. För att detta ska fungera så måste man ha en äldre version. Jag använde 1.15.0
+* Ett annat problem var att jag inte riktigt har kunnat hosta koden på heroku. Jag är ganska säker på att det är något bibliotek som jag glömt i mina requirements
 
 ### Förbättringar
+
+* Den första förbättringen på detta projekt är att hitta ett annat sätt än praw att scrapea data med. Praw tillåter bara att scrapea för lite posts vilket har lett till att modelen inte är superbra. 
+* En annan lite mindre viktig förbättring är att kolla på **bert** så att man ser vilken post som är bäst. För det jag gör nu är att ta den kortaste posten och posta den. Men den kortaste behöver ju inte vara den bästa.
