@@ -1,7 +1,7 @@
 
   <p align="center">
     Ett program som genererar opopulära åsikter som sedan postas varje timme på reddit!
-    För att se posts boten har gjort se [reddit](https://medium.com/@plog397/webscraping-reddit-python-reddit-api-wrapper-praw-tutorial-for-windows-a9106397d75e).
+    För att se posts boten har gjort se [reddit](https://medium.com/@plog397/webscraping-reddit-python-reddit-api-wrapper-praw-tutorial-for-windows-a9106397d75e)
 
 ## Innehållsförteckning
 
