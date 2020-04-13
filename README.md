@@ -1,7 +1,9 @@
 
   <p align="center">
     Ett program som genererar opopulära åsikter som sedan postas varje timme på reddit!
-    För att se posts boten har gjort se [reddit](https://www.reddit.com/user/abblinkas)
+    
+
+För att se posts boten har gjort se [reddit](https://www.reddit.com/user/abblinkas)
 
 ## Innehållsförteckning
 
