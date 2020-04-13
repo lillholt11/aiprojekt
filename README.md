@@ -15,10 +15,6 @@
 * [Användning](#användning)
 * [Problem](#problem)
 
-
-
-
-<!-- ABOUT THE PROJECT -->
 ## Om Projektet
 
 Projektet handlar om att först hämta ett stort dataset med opopulära åsikter. För att göra detta så behöver man webscrapea och hämta data. Sedan så tränar man en GPT-2 model (textgenererande ai). Denna model används sedan till att skapa ett antal olika opopulära åsikter. Den opopulrä åsikt som bäst passar in på reddit postas sedan till reddit. Detta görs i språket **python**. För att webscrape och posta till reddit så används biblioteket **praw**.
@@ -30,15 +26,11 @@ Nedan finns länkar listade som användts eller har varit till hjälp under proj
 * [Google colab](https://colab.research.google.com/drive/1EPNe3Q8IwQDQlS3fBPO9ikSq5Dy7hWpc)
 * [Heroku](https://heroku.com)
 
-## Börja
-
-Det här projektet använder [datasetet](https://www.kaggle.com/soumikrakshit/classical-music-midi). Det här datasetet är klassisk musik som bara spelas av ett instrument. 
-Här är även min [google-colab](https://colab.research.google.com/drive/1HbpWlQ8gaTG6c4ps7POXD-sSs-6mbWLg#scrollTo=JF1mwki7pjZc) fil som du kan följa.
+## Köra programmet
 
 ### Förarbete
 
-Vi börjar med att clona det vi behöver för det här projektet. Vi gör även mappar för vart bilderna kommer hamna. 
-Sist använder vi tensorflow 1.
+Börja med att ladda ned alla filer från githuben
 ```sh
 %cd /content/
 !git clone https://github.com/abbbringu/Project_Edward
