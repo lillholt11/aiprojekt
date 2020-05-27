@@ -72,11 +72,11 @@ def download_file_from_google_drive(id, destination):
 
     save_response_content(response, destination)
 
-download_file_from_google_drive(dataGoogleFileid,dataFilepath)
 download_file_from_google_drive(tarGoogleFileid,tarFilepath)
 extract()
 sess = gpt2.start_tf_sess()
 gpt2.load_gpt2(sess)
+download_file_from_google_drive(dataGoogleFileid,dataFilepath)
 
 #checking whether post exist already
 def checkPost(post):
