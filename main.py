@@ -19,8 +19,8 @@ reddit = praw.Reddit(client_id = "vvT6zwSKNTzn7g",
 #model name and location
 tarFilepath = "checkpoint_run1.tar"
 tarGoogleFileid = "1ZC3fGu4EOMcOmmKK3ug6dJ3gBWvRMDXn"
-dataFilepath = "data.txt"
-dataGoogleFileid = "1t43abHqeBzuKwoLh4zCybXXze_2-gbFb"
+#dataFilepath = "data.txt"
+#dataGoogleFileid = "1t43abHqeBzuKwoLh4zCybXXze_2-gbFb"
 
 #function to scrape a subreddit to create the data.txt file
 def scrape():
@@ -76,16 +76,16 @@ download_file_from_google_drive(tarGoogleFileid,tarFilepath)
 extract()
 sess = gpt2.start_tf_sess()
 gpt2.load_gpt2(sess)
-download_file_from_google_drive(dataGoogleFileid,dataFilepath)
+#download_file_from_google_drive(dataGoogleFileid,dataFilepath)
 
 #checking whether post exist already
-def checkPost(post):
+#def checkPost(post):
     print("Checking post...")
-    with open('data.txt') as f:
-        for posts in f.readlines():
-            if post in posts:
-                return True
-    return False
+    #with open('data.txt') as f:
+     #   for posts in f.readlines():
+      #      if post in posts:
+       #         return True
+    #return False
 
 #generating posts
 def generatePost():
@@ -96,7 +96,7 @@ def generatePost():
     acceptablePosts = []
     #appending acceptable posts to an array
     for post in posts:
-        if "******************************" in post and not checkPost(post):
+        if "******************************" in post:
             acceptablePosts.append(post.split("******************************"))
     if len(acceptablePosts) == 0:
         print("No possible posts found. Trying again...")
